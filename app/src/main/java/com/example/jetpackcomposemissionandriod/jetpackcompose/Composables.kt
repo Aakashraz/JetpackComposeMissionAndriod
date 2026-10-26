@@ -1,6 +1,7 @@
 package com.example.jetpackcomposemissionandriod.jetpackcompose
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -115,8 +116,7 @@ fun RowExample() {
 }
 
 
-@Preview(showBackground = true, showSystemUi = true,
-    device= "spec:width=360dp, height=300dp")
+
 @Composable
 fun ColumnExample() {
     Column(
@@ -134,6 +134,34 @@ fun ColumnExample() {
             value = " ",
             onValueChange = { },
             label = { Text(text = "Enter you password") }
+        )
+    }
+}
+
+
+
+@Preview(showBackground = true, showSystemUi = true,
+    device= "spec:width=360dp, height=300dp")
+@Composable
+fun BoxExample() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+
+    ) {
+        Text(
+            text = "Note 1",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.TopCenter)
+        )
+        Text(
+            text = "Note 2",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.CenterEnd)
+        )
+        Text(
+            text = "Note 3",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.BottomStart)
         )
     }
 }
