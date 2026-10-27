@@ -116,13 +116,14 @@ fun RowExample() {
 }
 
 
-
+@Preview(showBackground = true, showSystemUi = true,
+    device= "spec:width=360dp, height=300dp")
 @Composable
 fun ColumnExample() {
     Column(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = "LOGIN Here", fontSize = 20.sp)
         OutlinedTextField(
@@ -140,8 +141,8 @@ fun ColumnExample() {
 
 
 
-@Preview(showBackground = true, showSystemUi = true,
-    device= "spec:width=360dp, height=300dp")
+//@Preview(showBackground = true, showSystemUi = true,
+//    device= "spec:width=360dp, height=300dp")
 @Composable
 fun BoxExample() {
     Box(
