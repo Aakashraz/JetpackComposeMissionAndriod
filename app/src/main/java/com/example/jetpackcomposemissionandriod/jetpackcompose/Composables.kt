@@ -1,5 +1,12 @@
 package com.example.jetpackcomposemissionandriod.jetpackcompose
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
@@ -12,6 +19,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -59,9 +68,9 @@ fun TextFieldExample() {
 }
 
 
-@Preview(showBackground=true, showSystemUi = true,
-        device= "spec:width=360dp, height=200dp"
-    )
+//@Preview(showBackground=true, showSystemUi = true,
+//        device= "spec:width=360dp, height=200dp"
+//    )
 @Composable
 fun OutlinedTextFieldExample() {
     var name by remember {mutableStateOf("")}
@@ -84,4 +93,75 @@ fun OutlinedTextFieldExample() {
             focusedBorderColor = Color.Black,
         )
     )
+}
+
+
+
+//@Preview(showBackground = true, showSystemUi = true,
+//    device= "spec:width=360dp, height=200dp"
+//)
+@Composable
+fun RowExample() {
+
+    Row (
+        modifier = Modifier.fillMaxSize(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+    )
+    {
+        Text(text = "Apple", fontSize = 25.sp)
+        Text(text = "Ananas", fontSize = 25.sp)
+        Text(text = "Orange", fontSize = 25.sp)
+    }
+}
+
+
+
+@Composable
+fun ColumnExample() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "LOGIN Here", fontSize = 20.sp)
+        OutlinedTextField(
+            value = "",
+            onValueChange = { },
+            label = { Text(text = "Enter you username") }
+        )
+        OutlinedTextField(
+            value = " ",
+            onValueChange = { },
+            label = { Text(text = "Enter you password") }
+        )
+    }
+}
+
+
+
+@Preview(showBackground = true, showSystemUi = true,
+    device= "spec:width=360dp, height=300dp")
+@Composable
+fun BoxExample() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+
+    ) {
+        Text(
+            text = "Note 1",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.TopCenter)
+        )
+        Text(
+            text = "Note 2",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.CenterEnd)
+        )
+        Text(
+            text = "Note 3",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.BottomStart)
+        )
+    }
 }
