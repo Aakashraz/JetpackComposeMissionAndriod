@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,9 +37,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-@Preview(showBackground=true,
-    showSystemUi=true,
-    device="spec:width=280dp, height=350dp")
+//@Preview(showBackground=true,
+//    showSystemUi=true,
+//    device="spec:width=280dp, height=350dp")
 @Composable
 fun ButtonExample() {
 
@@ -110,4 +111,27 @@ fun ButtonExample() {
         }
     }
 
+}
+
+
+@Preview(showBackground=true,
+    showSystemUi=true,
+    device="spec:width=280dp, height=360dp")
+@Composable
+fun OutlinedButtonExample() {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(12.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        OutlinedButton(
+            onClick = {},
+            modifier = Modifier.fillMaxWidth(0.9f),
+            colors = ButtonDefaults.outlinedButtonColors(
+                contentColor = Color.Magenta,
+            )
+        ) {
+            Text(text = "Click ME!!", fontWeight = FontWeight.SemiBold)
+        }
+    }
 }
