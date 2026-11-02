@@ -12,7 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.jetpackcomposemissionandriod.jetpackcompose.ButtonExample
+import com.example.jetpackcomposemissionandriod.jetpackcompose.CardExample2
 import com.example.jetpackcomposemissionandriod.jetpackcompose.OutlinedTextFieldExample
+import com.example.jetpackcomposemissionandriod.jetpackcompose.StateHoistingExample
+import com.example.jetpackcomposemissionandriod.jetpackcompose.StateManagementExample
 import com.example.jetpackcomposemissionandriod.ui.theme.JetpackComposeMissionAndriodTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +25,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeMissionAndriodTheme {
 //                OutlinedTextFieldExample()
-                ButtonExample()
+//                ButtonExample()
+//                CardExample2()
+//                StateManagementExample()
+                StateHoistingExample()
             }
         }
     }
