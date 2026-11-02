@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.jetpackcomposemissionandriod.jetpackcompose.AlertDialogExample
 import com.example.jetpackcomposemissionandriod.jetpackcompose.ButtonExample
 import com.example.jetpackcomposemissionandriod.jetpackcompose.CardExample2
 import com.example.jetpackcomposemissionandriod.jetpackcompose.OutlinedTextFieldExample
@@ -28,7 +29,8 @@ class MainActivity : ComponentActivity() {
 //                ButtonExample()
 //                CardExample2()
 //                StateManagementExample()
-                StateHoistingExample()
+//                StateHoistingExample()
+                AlertDialogExample()
             }
         }
     }
