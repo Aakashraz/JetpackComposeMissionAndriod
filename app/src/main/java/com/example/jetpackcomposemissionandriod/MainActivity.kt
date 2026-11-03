@@ -17,6 +17,7 @@ import com.example.jetpackcomposemissionandriod.jetpackcompose.CardExample2
 import com.example.jetpackcomposemissionandriod.jetpackcompose.OutlinedTextFieldExample
 import com.example.jetpackcomposemissionandriod.jetpackcompose.StateHoistingExample
 import com.example.jetpackcomposemissionandriod.jetpackcompose.StateManagementExample
+import com.example.jetpackcomposemissionandriod.jetpackcompose.navigation.LoginScreenUI
 import com.example.jetpackcomposemissionandriod.ui.theme.JetpackComposeMissionAndriodTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +31,8 @@ class MainActivity : ComponentActivity() {
 //                CardExample2()
 //                StateManagementExample()
 //                StateHoistingExample()
-                AlertDialogExample()
+//                AlertDialogExample()
+                LoginScreenUI()
             }
         }
     }
