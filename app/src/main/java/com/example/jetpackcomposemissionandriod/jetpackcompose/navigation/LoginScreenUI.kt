@@ -9,13 +9,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -26,14 +24,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 
-@Preview(
-    showBackground = true, showSystemUi = true,
-    device = "spec:width=280dp, height=360dp"
-)
+
 @Composable
-fun LoginScreenUI() {
+fun LoginScreenUI(navController: NavHostController) {
 
     var userName by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -66,7 +62,11 @@ fun LoginScreenUI() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                // Navigate to the Home Screen
+//                navController.navigate(MyNavRoutes.HomeScreen)
+                navController.navigate(MyNavRoutes.WelcomeScreen(userName = userName))
+            },
             modifier = Modifier
                 .fillMaxWidth(0.7f)
                 .height(34.dp),
