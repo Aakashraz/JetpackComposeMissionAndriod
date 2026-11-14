@@ -1,0 +1,36 @@
+package com.example.jetpackcomposemissionandriod.jetpackcompose.navigation_bar
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
+
+
+@Preview(
+    showBackground = true, showSystemUi = true,
+    device = "spec:width=240dp, height=360dp"
+)
+@Composable
+fun NavBarProfileScreen() {
+
+    Scaffold(
+        bottomBar = { MyNavBar() }
+    ) { innerPadding ->
+
+        Column(
+            modifier = Modifier.fillMaxSize().padding(innerPadding),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Profile Screen", fontSize = 30.sp, fontWeight = FontWeight.Bold)
+        }
+    }
+}
