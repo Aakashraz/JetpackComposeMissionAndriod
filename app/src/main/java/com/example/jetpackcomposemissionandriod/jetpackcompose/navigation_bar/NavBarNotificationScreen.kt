@@ -12,17 +12,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 
-@Preview(
-    showBackground = true, showSystemUi = true,
-    device = "spec:width=240dp, height=360dp"
-)
+
 @Composable
-fun NavBarNotificationScreen() {
+fun NavBarNotificationScreen(navController: NavHostController) {
 
     Scaffold(
-        bottomBar = { MyNavBar() }
+        bottomBar = { MyNavBar(navController, "Notifications") }
     ) { innerPadding ->
 
         Column(
@@ -30,7 +28,7 @@ fun NavBarNotificationScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Notification Screen", fontSize = 30.sp, fontWeight = FontWeight.Bold)
+            Text("Notification Screen here!!!", fontSize = 30.sp, fontWeight = FontWeight.Bold)
         }
     }
 }
