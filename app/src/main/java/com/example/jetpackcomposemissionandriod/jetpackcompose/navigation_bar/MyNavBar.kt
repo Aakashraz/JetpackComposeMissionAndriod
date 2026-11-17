@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.example.jetpackcomposemissionandriod.R
 
@@ -41,9 +41,16 @@ fun MyNavBar(navController: NavHostController, key: String) {
         navItems.forEach { item ->
             NavigationBarItem(
                 selected = item.title == key,
-                onClick = {navController.navigate(item.routes)},
+                onClick = {
+                    navController.navigate(item.routes) {
+                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                },
                 icon = {
-                    Icon(imageVector = item.icon, contentDescription = "$item.title")
+                    Icon(imageVector = item.icon, contentDescription = null)
+                    // Since the tab already has a visible label, you could even pass null to avoid the screen reader saying “Home” twice.
                 },
                 label = { Text(text = item.title) },
                 colors = NavigationBarItemDefaults.colors(
